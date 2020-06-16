@@ -1,0 +1,47 @@
+{
+  "name": "lorgar",
+  "version": "0.1.0",
+  "description": "Very simple module for translate your texts with custom params, cases and plurals.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --config ./webpack.config.js"
+  },
+  "keywords": [
+    "localization",
+    "translation",
+    "internationalization",
+    "plural"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "bugs": {
+    "url": "https://github.com/HolyCoffee/lorgar/issues"
+  },
+  "homepage": "https://github.com/HolyCoffee/lorgar#readme",
+  "author": {
+    "name": "Daniil Fomin",
+    "email": "fomin.daniil.leonidovich@gmail.com",
+    "url": "https://github.com/HolyCoffee"
+  },
+  "jest": {
+    "testRegex": "(/tests/.*\\.test\\.ts)$"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HolyCoffee/lorgar.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
