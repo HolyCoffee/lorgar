@@ -6,11 +6,13 @@ const localizator = new Localizator({
       test: 'тест',
       test3: 'Меня зовут $0 $1',
       test4: 'Меня зовут {name} {surname}',
+      test5: '{counter} [quantity,яблоко,яблока,яблок]',
     },
     en: {
       test: 'test',
       test3: 'My name is $0 $1',
       test4: 'My name is {name} {surname}',
+      test5: '{counter} [quantity,apple,apples,apples]',
     },
   },
   language: 'ru',
@@ -68,4 +70,16 @@ test('translate with object params', () => {
 test('test translate with fallback language', () => {
   localizator.changeLanguage(undefined);
   expect(localizator.t('test')).toEqual('тест');
+});
+
+test('test translate with plural form 1', () => {
+  expect(localizator.t('test5', { counter: 1 }, 'fallback', { quantity: 1 })).toEqual('1 яблоко');
+});
+
+test('test translate with plural form 1', () => {
+  expect(localizator.t('test5', { counter: 2 }, 'fallback', { quantity: 2 })).toEqual('2 яблока');
+});
+
+test('test translate with plural form 1', () => {
+  expect(localizator.t('test5', { counter: 5 }, 'fallback', { quantity: 5 })).toEqual('5 яблок');
 });

@@ -23,7 +23,7 @@ class Localizator {
     this.language = language;
   }
 
-  t(key: string, params?: ArrayParams | ObjectParams, fallback: string = key) {
+  t(key: string, params?: ArrayParams | ObjectParams, fallback: string = key, plural?: Plural) {
     const language = this.language || this.fallbackLanguage;
 
     if (!language) {
@@ -48,7 +48,29 @@ class Localizator {
       }
     }
 
-    return translate;
+    return plural ? this.setPluralForm(translate, plural) : translate;
+  }
+
+  private setPluralForm(translate: string, plural: Plural) {
+    let preparedTranlate = translate;
+
+    preparedTranlate.split(' ').forEach((item) => {
+      /\[([^,]+),([^,\d]+,)+([^,]+)\]/.test(item) &&
+        (preparedTranlate = preparedTranlate.replace(
+          item,
+          item.slice(1, -1).split(',')[this.replacer(plural[item.slice(1, -1).split(',')[0]])]
+        ));
+    });
+
+    return preparedTranlate;
+  }
+
+  private replacer(value: number) {
+    return (Math.abs(value) % 100 >= 5 && Math.abs(value) % 100 <= 20) || Math.abs(value) % 100 === 0
+      ? 3
+      : Math.abs(value) % 10 >= 2 && Math.abs(value) % 10 <= 4
+      ? 2
+      : 1;
   }
 }
 
