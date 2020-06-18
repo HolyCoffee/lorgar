@@ -102,7 +102,7 @@ localizator.t('some.key'); // some translate
 javascript:
 
 ```js
-myLoc.t('wrong.key'); // wrong.key
+localizator.t('wrong.key'); // wrong.key
 ```
 
 ### Get translate with wrong key and fallback
@@ -110,7 +110,7 @@ myLoc.t('wrong.key'); // wrong.key
 javascript:
 
 ```js
-myLoc.t('wrong.key', null, 'some fallback'); // some fallback
+localizator.t('wrong.key', null, 'some fallback'); // some fallback
 ```
 
 ### <a name="params" id="params"></a>Get translate with params
@@ -128,7 +128,7 @@ locale:
 javascript:
 
 ```js
-myLoc.t('some.key', ['param']); // some param
+localizator.t('some.key', ['param']); // some param
 ```
 
 #### Params in object
@@ -144,7 +144,7 @@ locale:
 javascript:
 
 ```js
-myLoc.t('some.key', 'some fallback', { test: 'param' }); // some param
+localizator.t('some.key', 'some fallback', { test: 'param' }); // some param
 ```
 
 ### <a name="plural" id="plural"></a>Get translate with plural form
@@ -174,17 +174,17 @@ locale:
 javascript:
 
 ```js
-myLoc.t('plural', 'some fallback', [1], { subs: 1 }); // 1 subscriber
+localizator.t('plural', 'some fallback', [1], { subs: 1 }); // 1 subscriber
 ```
 
 #### Two items
 
 ```js
-myLoc.t('plural', 'some fallback', [2], { subs: 2 }); // 2 subscribers
+localizator.t('plural', 'some fallback', [2], { subs: 2 }); // 2 subscribers
 ```
 
 #### Five items
 
 ```js
-myLoc.t('plural', 'some fallback', [5], { subs: 5 }); // 5 subscribers
+localizator.t('plural', 'some fallback', [5], { subs: 5 }); // 5 subscribers
 ```
