@@ -1,4 +1,4 @@
-# localizator.js
+# Lorgar
 
 Very simple module for translate your texts with custom params, cases and plurals.
 
