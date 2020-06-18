@@ -1,6 +1,6 @@
 {
   "name": "lorgar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Very simple module for translate your texts with custom params, cases and plurals.",
   "main": "dist/index.js",
   "scripts": {
